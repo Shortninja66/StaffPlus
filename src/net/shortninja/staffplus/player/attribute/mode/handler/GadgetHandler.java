@@ -94,7 +94,7 @@ public class GadgetHandler
 		
 		try{
 			player.setVelocity(vector.multiply(options.modeCompassVelocity));
-		catch(Exception ex){ }
+		} catch(Exception ex){ }
 	}
 	
 	public void onRandomTeleport(Player player, int count)
