@@ -1,5 +1,6 @@
 package net.shortninja.staffplus.player.attribute.mode.handler;
 
+import java.lang.Exception;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -91,7 +92,9 @@ public class GadgetHandler
 	{
 		Vector vector = player.getLocation().getDirection();
 		
-		player.setVelocity(vector.multiply(options.modeCompassVelocity));
+		try{
+			player.setVelocity(vector.multiply(options.modeCompassVelocity));
+		} catch(Exception ex){ }
 	}
 	
 	public void onRandomTeleport(Player player, int count)
