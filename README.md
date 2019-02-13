@@ -10,14 +10,25 @@ This plugin started off as a copy of HydraHCF's staff mode plugin back in July o
 * Brand new ticket management system.
 * Better overall alerts handling.
 * Configurable messages with language support.
-* Version independence (from 1.7 to 1.11).
+* Version independence (from 1.7 to 1.12).
 * Fixed all known bugs.
 * Removed ProtocolLib dependency.
 
 #### Useful links
-* [Resource page](https://www.spigotmc.org/resources/staff-the-ultimate-moderation-plugin.15151/)
-* [Submit issues](https://github.com/Shortninja66/StaffPlus/issues)
-* [Request features or ask questions](http://staffplus.userecho.com/)
+* [Resource page](https://www.spigotmc.org/resources/staff-the-ultimate-moderation-plugin-1-7-1-13.41500/)
+* [Submit issues](https://github.com/Qballl/StaffPlus/issues)
+* [Request features or ask questions](https://discord.gg/N6VqtYC)
 * [Configurable files](https://github.com/Shortninja66/StaffPlus/wiki/Configurable-files)
-* [Plugin jar download](https://www.spigotmc.org/resources/staff-the-ultimate-moderation-plugin.15151/history)
+* [Plugin jar download](https://www.spigotmc.org/resources/staff-the-ultimate-moderation-plugin-1-7-1-13.41500/history)
 * [Help wiki](https://github.com/Shortninja66/StaffPlus/wiki)
+
+#### Contributing
+* Fork this repo
+* Clone your repo
+* Make your changes
+* Submit a pull request
+
+#### Building
+* Clone this repo
+* Run mvn clean package
+* Wait (if you have never ran BuildTools before it will take a while future builds will be faster)
