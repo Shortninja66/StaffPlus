@@ -52,7 +52,6 @@ public class PlayerJoin implements Listener {
 
         if (options.loginEnabled && permission.has(player, options.permissionMember)) {
             if (securityHandler.hasPassword(player.getUniqueId())) {
-                freezeHandler.addFreeze(player, player, false);
                 message.send(player, messages.loginWaiting, messages.prefixGeneral);
             } else message.send(player, messages.loginRegister, messages.prefixGeneral);
         }
