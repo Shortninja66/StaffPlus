@@ -1,5 +1,6 @@
 package net.shortninja.staffplus;
 
+import net.shortninja.staffplus.filter.PasswordFilter;
 import net.shortninja.staffplus.player.NodeUser;
 import net.shortninja.staffplus.player.User;
 import net.shortninja.staffplus.player.UserManager;
@@ -7,11 +8,7 @@ import net.shortninja.staffplus.player.attribute.SecurityHandler;
 import net.shortninja.staffplus.player.attribute.TicketHandler;
 import net.shortninja.staffplus.player.attribute.infraction.InfractionCoordinator;
 import net.shortninja.staffplus.player.attribute.mode.ModeCoordinator;
-import net.shortninja.staffplus.player.attribute.mode.handler.CpsHandler;
-import net.shortninja.staffplus.player.attribute.mode.handler.FreezeHandler;
-import net.shortninja.staffplus.player.attribute.mode.handler.GadgetHandler;
-import net.shortninja.staffplus.player.attribute.mode.handler.ReviveHandler;
-import net.shortninja.staffplus.player.attribute.mode.handler.VanishHandler;
+import net.shortninja.staffplus.player.attribute.mode.handler.*;
 import net.shortninja.staffplus.server.AlertCoordinator;
 import net.shortninja.staffplus.server.PacketModifier;
 import net.shortninja.staffplus.server.chat.ChatHandler;
@@ -35,25 +32,13 @@ import net.shortninja.staffplus.server.data.config.Options;
 import net.shortninja.staffplus.server.data.file.ChangelogFile;
 import net.shortninja.staffplus.server.data.file.DataFile;
 import net.shortninja.staffplus.server.data.file.LanguageFile;
-import net.shortninja.staffplus.server.listener.BlockBreak;
-import net.shortninja.staffplus.server.listener.BlockPlace;
-import net.shortninja.staffplus.server.listener.FoodLevelChange;
-import net.shortninja.staffplus.server.listener.InventoryClick;
-import net.shortninja.staffplus.server.listener.InventoryClose;
+import net.shortninja.staffplus.server.listener.*;
 import net.shortninja.staffplus.server.listener.entity.EntityDamage;
 import net.shortninja.staffplus.server.listener.entity.EntityDamageByEntity;
 import net.shortninja.staffplus.server.listener.entity.EntityTarget;
-import net.shortninja.staffplus.server.listener.player.AsyncPlayerChat;
-import net.shortninja.staffplus.server.listener.player.PlayerCommandPreprocess;
-import net.shortninja.staffplus.server.listener.player.PlayerDeath;
-import net.shortninja.staffplus.server.listener.player.PlayerDropItem;
-import net.shortninja.staffplus.server.listener.player.PlayerInteract;
-import net.shortninja.staffplus.server.listener.player.PlayerJoin;
-import net.shortninja.staffplus.server.listener.player.PlayerPickupItem;
-import net.shortninja.staffplus.server.listener.player.PlayerQuit;
+import net.shortninja.staffplus.server.listener.player.*;
 import net.shortninja.staffplus.util.MessageCoordinator;
 import net.shortninja.staffplus.util.PermissionHandler;
-
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -90,6 +75,8 @@ public class StaffPlus extends JavaPlugin
 	public void onLoad()
 	{
 		APIManager.require(PacketListenerAPI.class, this);
+
+		Bukkit.getLogger().setFilter(new PasswordFilter());
 	}
 	
 	@Override
